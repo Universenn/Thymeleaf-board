@@ -1,0 +1,71 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+``
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap demo</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <!-- <link href="/docs/4.5/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous"> -->
+    <link href="starter-template.css" rel="stylesheet">
+</head>
+
+<body>
+<!--<div th:replace="footer::copy"></div>-->
+<!--    <nav th:replace="head::copy"></nav>-->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark" th:replace="common/head :: munu" ></nav>
+<!--        <div class="container-fluid">-->
+<!--            <a class="navbar-brand" href="#">Thymeleaf-Board</a>-->
+<!--            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"-->
+<!--                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">-->
+<!--                <span class="navbar-toggler-icon"></span>-->
+<!--            </button>-->
+<!--            <div class="collapse navbar-collapse" id="navbarCollapse">-->
+<!--                <ul class="navbar-nav me-auto mb-2 mb-md-0">-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link active" aria-current="page" href="#">홈</a>-->
+<!--                    </li>-->
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link" href="#">게시판</a>-->
+<!--                    </li>-->
+<!--&lt;!&ndash;                    <li class="nav-item">&ndash;&gt;-->
+<!--&lt;!&ndash;                        <a class="nav-link disabled" aria-disabled="true">Disabled</a>&ndash;&gt;-->
+<!--&lt;!&ndash;                    </li>&ndash;&gt;-->
+<!--                </ul>-->
+<!--&lt;!&ndash;                <form class="d-flex" role="search">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">&ndash;&gt;-->
+<!--&lt;!&ndash;                    <button class="btn btn-outline-success" type="submit">Search</button>&ndash;&gt;-->
+<!--&lt;!&ndash;                </form>&ndash;&gt;-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </nav>-->
+
+    <!-- Begin page content -->
+    <main class="flex-shrink-0">
+        <div class="container">
+            <h1 class="mt-5">Thymeleaf-Board</h1>
+            <p class="lead">Thymeleaf 를 이용한 게시판 만들기 <br><code class="small">Thymeleaf 란?<br></code> Thymeleaf's main goal is to bring elegant natural templates to your development workflow — HTML that can be correctly displayed in browsers and also work as static prototypes, allowing for stronger collaboration in development teams.</p>
+            <br><br>
+            <h1 class="mt-5">templates vs static</h1>
+            <p> static 은 정적 파일로 url 로 접근이 가능하지만 templates 는 동적 파일로 url 로 접근이 불가능하다.</p>
+
+            <!--                <code class="small">main &gt; .container</code>.</p>-->
+<!--            <p>Back to <a href="/docs/5.3/examples/sticky-footer/">the default sticky footer</a> minus the navbar.</p>-->
+        </div>
+
+        <div th:replace="common/footer::copy"></div>
+<!--        <div th:replace="footer::copy"></div>
+            같은 위치에 파일이면 상관 없지만 아니라면 경로 위치도 적어줘야 한다.-->
+
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+        integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.min.js"
+        integrity="sha384-Rx+T1VzGupg4BHQYs2gCW9It+akI2MM/mndMCy36UVfodzcJcF0GGLxZIzObiEfa"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
