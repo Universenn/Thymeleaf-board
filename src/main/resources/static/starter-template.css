@@ -1,3 +1,7 @@
-main > .container {
-    padding: 60px 15px 0;
+body {
+    padding-top: 5rem;
+}
+.starter-template {
+    padding: 3rem 1.5rem;
+    text-align: center;
 }
