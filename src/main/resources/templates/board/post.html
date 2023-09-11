@@ -18,11 +18,18 @@
         <input type="hidden" th:field="*{id}">
     <div class="mb-3">
         <label for="title" class="form-label">Title</label>
-        <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="제목을 입력하시오">
+        <input type="text" th:field="*{title}" class="form-control"
+               th:classappend="${#fields.hasErrors('title')} ? 'is-invalid'" id="title" placeholder="제목을 입력하시오">
+        <div class="invalid-feedback" th:if="${#fields.hasErrors('title')}" th:errors="*{title}">
+            에러 메세지
+        </div>
     </div>
     <div class="mb-3">
         <label for="content" class="form-label">Content</label>
-        <textarea class="form-control" th:field="*{content}" id="content" rows="3" placeholder="내용을 입력하시오"></textarea>
+        <textarea class="form-control" th:classappend="${#fields.hasErrors('content')} ? 'is-invalid'" th:field="*{content}" id="content" rows="3" placeholder="내용을 입력하시오"></textarea>
+        <div class="invalid-feedback" th:if="${#fields.hasErrors('content')}" th:errors="*{content}">
+            에러 메세지
+        </div>
     </div>
     <div class = "container">
         <div class="row">
