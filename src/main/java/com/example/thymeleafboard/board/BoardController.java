@@ -5,15 +5,14 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @Controller
 @RequestMapping("/board")
 @RequiredArgsConstructor
-public class BoardController {
+public class  BoardController {
 
     private final BoardRepository boardRepository;
 
@@ -25,4 +24,24 @@ public class BoardController {
 //        int size = boards.size();
         return "board/list";
     }
+
+
+    @GetMapping("/post")
+    public String boardGetPost(Model model, @RequestParam(required = false) Long id) {
+        if (id == null) {
+            model.addAttribute("board", new Board());
+        } else {
+            Board board = boardRepository.findById(id).orElseThrow(null);
+            model.addAttribute("board", board);
+        }
+        return "board/post";
+    }
+
+
+    @PostMapping("/post")
+    public String boardPost(@ModelAttribute Board board) {
+        boardRepository.save(board);
+        return "redirect:/board/list";
+    }
+
 }
